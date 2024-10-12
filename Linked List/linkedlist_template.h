@@ -106,3 +106,37 @@ navigator inicioLista(LISTA *lista);
  *  referencia a esta lista.
  */
 navigator siguienteLista(LISTA *lista, navigator posicion);
+
+/**
+ *  Función que retorna el elemento ubicado en la posición o índice según el parámetro. Recibe una lista [LISTA]
+ *  y un index [int]; devuelve el elemento en la posición del entero.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a eliminar).
+ *  @param index [int] Número entero que servirá de indice para retornar ese elemento de la lista.
+ *  @return findedItem [navigator] Elemento ubicado en la posición index de la lista.
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+navigator posicionLista(LISTA *lista, int index);
+
+/**
+ *  Función que retorna el tamaño de la lita. Recibe una lista [LISTA] y retorna el número de elementos
+ *  que contiene la lista.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a eliminar).
+ *  @return tamanio [int] Número de elementos que contiene la lista.
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+int tamanioLista(LISTA *lista);
+
+/**
+ *  Función que retorna TRUE (1) en caso de que la lista no tenga ningún elemento, en caso
+ *  contrario retorna FALSE (0).
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a eliminar).
+ *  @return flag [boolean] Retorna TRUE si la lista está vacía, de cualquier otra manera retorna FALSE.
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+boolean vacioLista(LISTA *lista);

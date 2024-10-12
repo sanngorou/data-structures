@@ -79,3 +79,37 @@ navigator siguienteLista(LISTA *lista, navigator posicion){
         return NULL;
     }
 };
+
+navigator posicionLista(LISTA *lista, int index){
+
+    navigator findedItem = NULL;
+
+    // Validar que el número index se encuentre o sea un número menor al tamaño de la lista.
+    if(index>0 && index<=lista->size){
+
+        findedItem = lista->head;
+        int iterator = 1;
+        while(iterator < index){
+            findedItem = findedItem->next;
+        }
+
+        return findedItem;
+    }
+    return findedItem;
+};
+
+int tamanioLista(LISTA *lista){
+
+    return lista->size;
+};
+
+boolean vacioLista(LISTA *lista){
+
+    // Retorna TRUE si la lista está vacía, si tiene al menos un elemento entonces retorna FALSE
+    if(lista->size = 0){
+        return TRUE;
+    }
+    else{
+        return FALSE;
+    }
+};
