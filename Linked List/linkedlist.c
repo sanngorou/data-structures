@@ -45,3 +45,37 @@ void eliminarLista(LISTA *lista){
 
     return;
 };
+
+navigator finalLista(LISTA *lista){
+
+    // Validar si la lista cuenta con al menos un elemento de lo contrario, devolver NULL
+    if(lista->size > 0){
+        return lista->tail;
+    }
+    else{
+        return NULL;
+    }
+};
+
+navigator inicioLista(LISTA *lista){
+
+    // Valida si la lista cuenta con al menos un elemento de lo contrario, devolver NULL
+    if(lista->size > 0){
+        return lista->head;
+    }
+    else{
+        return NULL;
+    }
+};
+
+navigator siguienteLista(LISTA *lista, navigator posicion){
+
+    // Validar si la lista cuenta con al menos dos elementos, ya que si está vacía o solo tiene
+    // un solo elemento, se devolverá NULL como sigiuente elemento
+    if(lista->size >= 2){
+        return posicion->next;
+    }
+    else{
+        return NULL;
+    }
+};

@@ -67,4 +67,42 @@ void inicializarLista(LISTA *lista);
  *  @return void
  *  @warning Debe existir una lista tipo [LISTA] para que pueda ser borrada.
  */
-int eliminarLista(LISTA *lista);
+void eliminarLista(LISTA *lista);
+
+/**
+ *  Función que retorna el último elemento de la lista. Recibe una lista [LISTA] y
+ *  busca el último elemento.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a eliminar).
+ *  @return nav [navigator] (Último elemento de la lista) en caso de que la lista se
+ *  encuentre vacía, devolverá nulo.
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+navigator finalLista(LISTA *lista);
+
+/**
+ *  Función que retorna el primer elemento de la lista. Recibe una lista [LISTA] y
+ *  busca el primer elemento.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a eliminar).
+ *  @return nav [navigator] (Primer elemento de la lista) en caso de que la lista se
+ *  encuentre vacía, devolvera nulo.
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+navigator inicioLista(LISTA *lista);
+
+/**
+ *  Función que retorna el siguiente elemento de la lista dado previamete un elemento o
+ *  posición. Recibe una lista [LISTA] y un elemento [navigator] y devuelve el siguiente
+ *  elemento.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a eliminar).
+ *  @param posicion [navigator] (Posición o elemento inciial para buscar el siguiente elemento).
+ *  @return siguienteItem [navigator] Siguiente elemento contiguo al elemento posición, en caso de que la lista se
+ *  encuentre vacía, devolvera nulo.
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+navigator siguienteLista(LISTA *lista, navigator posicion);
