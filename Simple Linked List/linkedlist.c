@@ -113,3 +113,46 @@ boolean vacioLista(LISTA *lista){
         return FALSE;
     }
 };
+
+void insertarFinal(LISTA *lista, NODO nuevoItem){
+
+    navigator aux1, aux2;
+
+    aux1 = malloc(sizeof(NODO));
+
+    // Validar que se haya podido crear un espacio de memoria válido.
+    if(aux1 == NULL){
+
+        exit(1);
+    }else{
+
+        *aux1 = nuevoItem;
+
+        // Validar si la lista está vacía, si es así entonces se inserta como primer elemento.
+        if(lista->head == NULL && lista->size == 0){
+            
+            aux1->next = NULL;
+
+            lista->head = aux1;
+            lista->tail = lista->head;
+
+        }
+        else{
+
+            // Se crea un nodo el cual va a ser el inicio de la lista y a partir de ahí se va a emparzar a recorrer hasta el final.
+            aux2 = lista->head;
+
+            while(aux2->next != NULL){
+                
+                aux2 = aux2->next;
+            }
+
+            
+        }
+
+        // Indiferentemente si la lista estaba vacía o no, se aumenta el tamaño de la lista después de insertar.
+        lista->size++;
+
+        return;
+    }
+};

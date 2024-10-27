@@ -140,3 +140,16 @@ int tamanioLista(LISTA *lista);
  *  referencia a esta lista.
  */
 boolean vacioLista(LISTA *lista);
+
+/**
+ *  Función que inserta un elemento a la lista en la última posición, Recibe una lista [LISTA] y un
+ *  elemento (NODO), recorre todos los elementos de la lista e inserta el nuevo elemento en
+ *  la última posición.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a eliminar).
+ *  @param nuevoIteam [NODO] Elemento que se va a insertar a la lista.
+ *  @return void
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+void insertarFinal(LISTA *lista, navigator nuevoItem);
