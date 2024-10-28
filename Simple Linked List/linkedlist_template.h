@@ -8,8 +8,9 @@
  *  @date   11/October/2024   
  */
 
-#define TRUE 1  /**< Etiqueta tipo TRUE con valor 1*/
-#define FALSE 0 /**< Etiqueta tipo FALSE con valor 0*/
+#define TRUE 1  /** Etiqueta tipo TRUE con valor 1*/
+#define FALSE 0 /** Etiqueta tipo FALSE con valor 0*/
+#define VAR_NAME(var) #var
 
 /// @brief etiqueta para crear elemento de tipo booleano.
 typedef unsigned char boolean;
@@ -22,11 +23,12 @@ typedef unsigned char boolean;
  *  elementos de la lista: nombre, apellidoP, apellidoM, edad, teléfono, apuntador al siguiente nodo.
  */
 typedef struct nodo {
-    char *nombre;
-    char *apellidoP;
-    char *apellidoM;
-    int edad;
-    int telefono;
+    //char *nombre;
+    //char *apellidoP;
+    //char *apellidoM;
+    //int edad;
+    //int telefono;
+    int ID;
     struct nodo *next;
 } NODO;
 
@@ -152,4 +154,17 @@ boolean vacioLista(LISTA *lista);
  *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
  *  referencia a esta lista.
  */
-void insertarFinal(LISTA *lista, navigator nuevoItem);
+void insertarFinal(LISTA *lista, NODO nuevoItem);
+
+/**
+ *  Función que imprime en consola todos los elementos de la lista. Recibe una lista [LISTA], recorre todos
+ *  los elementos de la lista e imprime en consola cada elemento uno a uno.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a imprimir).
+ *  @return void
+ *  @warning Se debe cerear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+void mostrarLista(LISTA *lista);
+
+void showLinks(LISTA *lista);

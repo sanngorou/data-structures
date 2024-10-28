@@ -41,7 +41,7 @@ void eliminarLista(LISTA *lista){
     }
 
     // Ya que se borraron todos los elementos, solo queda reestablecer valores de la lista.
-    inicializarLista(&lista);
+    inicializarLista(lista);
 
     return;
 };
@@ -106,7 +106,7 @@ int tamanioLista(LISTA *lista){
 boolean vacioLista(LISTA *lista){
 
     // Retorna TRUE si la lista está vacía, si tiene al menos un elemento entonces retorna FALSE
-    if(lista->size = 0){
+    if(lista->size == 0){
         return TRUE;
     }
     else{
@@ -122,37 +122,59 @@ void insertarFinal(LISTA *lista, NODO nuevoItem){
 
     // Validar que se haya podido crear un espacio de memoria válido.
     if(aux1 == NULL){
-
-        exit(1);
+        printf("Error al crear espacio de memoria para insertar un nuevo elemento en la lista %s", VAR_NAME(*lista));
+        exit(EXIT_FAILURE);
     }else{
 
         *aux1 = nuevoItem;
 
         // Validar si la lista está vacía, si es así entonces se inserta como primer elemento.
-        if(lista->head == NULL && lista->size == 0){
+        if(lista->head == NULL && lista->tail == NULL && lista->size == 0){
             
             aux1->next = NULL;
-
             lista->head = aux1;
             lista->tail = lista->head;
-
         }
         else{
 
-            // Se crea un nodo el cual va a ser el inicio de la lista y a partir de ahí se va a emparzar a recorrer hasta el final.
-            aux2 = lista->head;
-
-            while(aux2->next != NULL){
-                
-                aux2 = aux2->next;
-            }
-
-            
+            *aux1 = nuevoItem;
+            aux1->next = lista->tail->next;
+            lista->tail->next = aux1;
+            lista->tail = aux1;
         }
 
         // Indiferentemente si la lista estaba vacía o no, se aumenta el tamaño de la lista después de insertar.
-        lista->size++;
+        (lista->size)++;
 
         return;
+    }
+};
+
+void mostrarLista(LISTA *lista){
+    
+    navigator aux1;
+    aux1 = lista->head;
+
+    printf("\n\t[ ");
+    while(aux1){
+        printf("%d ", aux1->ID);
+        if(aux1->next != NULL){
+            printf("- ");
+        }
+        else{
+            printf("]\n");
+        }
+        aux1 = aux1->next;
+    }
+    return;
+};
+
+void showLinks(LISTA *lista){
+
+    navigator aux1;
+    aux1 = lista->head;
+    while(aux1 != NULL){
+        printf("NODO=%p  -  next=%p\n", aux1, aux1->next);
+        aux1 = aux1->next;
     }
 };
