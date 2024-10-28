@@ -116,7 +116,7 @@ boolean vacioLista(LISTA *lista){
 
 void insertarFinal(LISTA *lista, NODO nuevoItem){
 
-    navigator aux1, aux2;
+    navigator aux1;
 
     aux1 = malloc(sizeof(NODO));
 
@@ -141,6 +141,41 @@ void insertarFinal(LISTA *lista, NODO nuevoItem){
             aux1->next = lista->tail->next;
             lista->tail->next = aux1;
             lista->tail = aux1;
+        }
+
+        // Indiferentemente si la lista estaba vacía o no, se aumenta el tamaño de la lista después de insertar.
+        (lista->size)++;
+
+        return;
+    }
+};
+
+void insertarInicio(LISTA *lista, NODO nuevoItem){
+
+    navigator aux1, aux2;
+
+    aux1 = malloc(sizeof(NODO));
+
+    // Validar que se haya podido crear un espacio de memoria válido.
+    if(aux1 == NULL){
+        printf("Error al crear espacio de memoria para insertar un nuevo elemento en la lista %s", VAR_NAME(*lista));
+        exit(EXIT_FAILURE);
+    }else{
+
+        *aux1 = nuevoItem;
+
+        // Validar si la lista está vacía, si es así entonces se inserta como primer elemento.
+        if(lista->head == NULL && lista->tail == NULL && lista->size == 0){
+            
+            aux1->next = NULL;
+            lista->head = aux1;
+            lista->tail = lista->head;
+        }
+        else{
+
+            *aux1 = nuevoItem;
+            aux1->next = lista->head;
+            lista->head = aux1;
         }
 
         // Indiferentemente si la lista estaba vacía o no, se aumenta el tamaño de la lista después de insertar.

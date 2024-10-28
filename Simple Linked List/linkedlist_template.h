@@ -149,13 +149,25 @@ boolean vacioLista(LISTA *lista);
  *  elemento (NODO), recorre todos los elementos de la lista e inserta el nuevo elemento en
  *  la última posición.
  * 
- *  @param lista [LISTA *] (Referencia a la lista que se va a eliminar).
+ *  @param lista [LISTA *] (Referencia a la lista que se le va a insertar un elemento).
  *  @param nuevoIteam [NODO] Elemento que se va a insertar a la lista.
  *  @return void
  *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
  *  referencia a esta lista.
  */
 void insertarFinal(LISTA *lista, NODO nuevoItem);
+
+/**
+ *  Función que inserta un elemento a la lista al inicio, Recibe una lista [LISTA] y un
+ *  elemento (NODO) e inserta un elemento al inicio, recorriendo todos los elementos existentes una posición.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se le va a insertar un elemento).
+ *  @param nuevoIteam [NODO] Elemento que se va a insertar a la lista.
+ *  @return void
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
+void insertarIncio(LISTA *lista, NODO nuevoItem);
 
 /**
  *  Función que imprime en consola todos los elementos de la lista. Recibe una lista [LISTA], recorre todos
