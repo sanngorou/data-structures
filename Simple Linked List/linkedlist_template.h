@@ -7,7 +7,8 @@
  * 
  *  @date   11/October/2024   
  */
-
+#ifndef __TADLista_H
+#define __TADLista_H
 #define TRUE 1  /** Etiqueta tipo TRUE con valor 1*/
 #define FALSE 0 /** Etiqueta tipo FALSE con valor 0*/
 #define VAR_NAME(var) #var
@@ -162,9 +163,20 @@ void insertarFinal(LISTA *lista, NODO nuevoItem);
  * 
  *  @param lista [LISTA *] (Referencia a la lista que se va a imprimir).
  *  @return void
- *  @warning Se debe cerear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
  *  referencia a esta lista.
  */
 void mostrarLista(LISTA *lista);
 
+/**
+ *  Función que imprime en consola las direcciones de memoria involucradas en la lista. Recibe una lista [LISTA], recorre
+ *  todos los elementos de la lista e imprime la dirección de la memoria del nodo y el nodo que tiene como siguiente.
+ * 
+ *  @param lista [LISTA *] (Referencia a la lista que se va a imprimir).
+ *  @return void
+ *  @warning Se debe crear una lista tipo [LISTA *] y el parámetro lista tiene la
+ *  referencia a esta lista.
+ */
 void showLinks(LISTA *lista);
+
+#endif      // __TADLista_H
